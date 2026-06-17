@@ -24,6 +24,7 @@ import {
   Headphones,
   Send,
 } from "lucide-react";
+import { submitLead } from "@/lib/leads.functions";
 import heroImage from "@/assets/hero-devices.jpg";
 
 
