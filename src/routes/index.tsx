@@ -518,9 +518,7 @@ function HowItWorks() {
 function LeadForm() {
   const [name, setName] = useState("");
   const [business, setBusiness] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const formatPhone = (v: string) => {
     const d = v.replace(/\D/g, "").slice(0, 11);
@@ -530,7 +528,7 @@ function LeadForm() {
     return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
   };
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const n = name.trim();
     const b = business.trim();
@@ -539,11 +537,24 @@ function LeadForm() {
     if (b.length < 2 || b.length > 80) return setError("Informe o nome da empresa.");
     if (digits.length < 10 || digits.length > 11) return setError("WhatsApp inválido.");
     setError(null);
-    setSent(true);
-    const msg =
-      `Olá! Tenho interesse nas Soluções Digitais.\n\n` +
-      `Nome: ${n}\nEmpresa: ${b}\nWhatsApp: ${formatPhone(digits)}`;
-    window.open(waLink(msg), "_blank", "noopener");
+    setLoading(true);
+    try {
+      await submitLead({
+        name: n,
+        business: b,
+        whatsapp: formatPhone(digits),
+        source: "landing_page",
+      });
+      setSent(true);
+      const msg =
+        `Olá! Tenho interesse nas Soluções Digitais.\n\n` +
+        `Nome: ${n}\nEmpresa: ${b}\nWhatsApp: ${formatPhone(digits)}`;
+      window.open(waLink(msg), "_blank", "noopener");
+    } catch (err) {
+      setError("Não foi possível enviar. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
