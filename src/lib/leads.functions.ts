@@ -1,17 +1,21 @@
 import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
 import { createClient } from "@supabase/supabase-js";
 
+const leadSchema = z.object({
+  name: z.string().min(1),
+  business: z.string().min(1),
+  whatsapp: z.string().min(1),
+  source: z.string().optional(),
+  utm_campaign: z.string().optional(),
+  utm_source: z.string().optional(),
+  utm_medium: z.string().optional(),
+});
+
 export const submitLead = createServerFn({ method: "POST" })
+  .inputValidator((data) => leadSchema.parse(data))
   .handler(async ({ data }) => {
-    const { name, business, whatsapp, source, utm_campaign, utm_source, utm_medium } = (data as unknown) as {
-      name: string;
-      business: string;
-      whatsapp: string;
-      source?: string;
-      utm_campaign?: string;
-      utm_source?: string;
-      utm_medium?: string;
-    };
+    const { name, business, whatsapp, source, utm_campaign, utm_source, utm_medium } = data;
 
     const url = process.env.SUPABASE_URL;
     const key = process.env.SUPABASE_PUBLISHABLE_KEY;

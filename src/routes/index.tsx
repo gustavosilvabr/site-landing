@@ -518,6 +518,9 @@ function HowItWorks() {
 function LeadForm() {
   const [name, setName] = useState("");
   const [business, setBusiness] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const formatPhone = (v: string) => {
