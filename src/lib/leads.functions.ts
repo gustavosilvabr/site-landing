@@ -3,7 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 
 export const submitLead = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
-    const { name, business, whatsapp, source, utm_campaign, utm_source, utm_medium } = data as {
+    const { name, business, whatsapp, source, utm_campaign, utm_source, utm_medium } = (data as unknown) as {
       name: string;
       business: string;
       whatsapp: string;
@@ -41,3 +41,4 @@ export const submitLead = createServerFn({ method: "POST" })
 
     return { success: true };
   });
+
