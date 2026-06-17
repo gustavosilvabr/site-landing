@@ -542,11 +542,13 @@ function LeadForm() {
     setError(null);
     setLoading(true);
     try {
-      await submitLead.call({
-        name: n,
-        business: b,
-        whatsapp: formatPhone(digits),
-        source: "landing_page",
+      await submitLead({
+        data: {
+          name: n,
+          business: b,
+          whatsapp: formatPhone(digits),
+          source: "landing_page",
+        },
       });
       setSent(true);
       const msg =
