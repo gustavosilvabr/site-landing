@@ -513,7 +513,151 @@ function HowItWorks() {
   );
 }
 
+/* -------------------- LEAD FORM -------------------- */
+function LeadForm() {
+  const [name, setName] = useState("");
+  const [business, setBusiness] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const formatPhone = (v: string) => {
+    const d = v.replace(/\D/g, "").slice(0, 11);
+    if (d.length <= 2) return d;
+    if (d.length <= 7) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+    if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+    return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+  };
+
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const n = name.trim();
+    const b = business.trim();
+    const digits = whatsapp.replace(/\D/g, "");
+    if (n.length < 2 || n.length > 80) return setError("Informe um nome válido.");
+    if (b.length < 2 || b.length > 80) return setError("Informe o nome da empresa.");
+    if (digits.length < 10 || digits.length > 11) return setError("WhatsApp inválido.");
+    setError(null);
+    setSent(true);
+    const msg =
+      `Olá! Tenho interesse nas Soluções Digitais.\n\n` +
+      `Nome: ${n}\nEmpresa: ${b}\nWhatsApp: ${formatPhone(digits)}`;
+    window.open(waLink(msg), "_blank", "noopener");
+  };
+
+  return (
+    <section id="contato" className="py-24">
+      <div className="mx-auto max-w-5xl px-4">
+        <div className="grid lg:grid-cols-2 gap-10 items-center border border-white/10 rounded-3xl p-8 md:p-12 bg-white/[0.02]">
+          <div>
+            <p className="text-sm font-semibold text-[color:var(--primary-glow)] uppercase tracking-wider">
+              Receba uma proposta
+            </p>
+            <h2
+              className="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight leading-tight"
+              style={{ fontFamily: "Space Grotesk" }}
+            >
+              Deixe seus dados e nosso time entra em contato.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Sem compromisso. Respondemos em até poucos minutos em horário comercial,
+              com um diagnóstico inicial gratuito do seu negócio.
+            </p>
+            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[color:var(--primary-glow)]" />
+                Atendimento humano e direto
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[color:var(--primary-glow)]" />
+                Diagnóstico gratuito da presença digital
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[color:var(--primary-glow)]" />
+                Seus dados ficam apenas conosco
+              </li>
+            </ul>
+          </div>
+
+          <form onSubmit={onSubmit} className="space-y-4" noValidate>
+            <div>
+              <label htmlFor="lf-name" className="block text-sm font-medium mb-2">
+                Nome completo
+              </label>
+              <input
+                id="lf-name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                maxLength={80}
+                required
+                autoComplete="name"
+                placeholder="Seu nome"
+                className="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[color:var(--primary-glow)] focus:bg-white/[0.06] transition"
+              />
+            </div>
+            <div>
+              <label htmlFor="lf-business" className="block text-sm font-medium mb-2">
+                Empresa / negócio
+              </label>
+              <input
+                id="lf-business"
+                type="text"
+                value={business}
+                onChange={(e) => setBusiness(e.target.value)}
+                maxLength={80}
+                required
+                autoComplete="organization"
+                placeholder="Nome da sua empresa"
+                className="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[color:var(--primary-glow)] focus:bg-white/[0.06] transition"
+              />
+            </div>
+            <div>
+              <label htmlFor="lf-whats" className="block text-sm font-medium mb-2">
+                WhatsApp
+              </label>
+              <input
+                id="lf-whats"
+                type="tel"
+                value={whatsapp}
+                onChange={(e) => setWhatsapp(formatPhone(e.target.value))}
+                inputMode="tel"
+                required
+                autoComplete="tel"
+                placeholder="(00) 00000-0000"
+                className="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[color:var(--primary-glow)] focus:bg-white/[0.06] transition"
+              />
+            </div>
+
+            {error && (
+              <p className="text-sm text-red-400" role="alert">
+                {error}
+              </p>
+            )}
+            {sent && !error && (
+              <p className="text-sm text-[color:var(--primary-glow)]" role="status">
+                Recebemos seus dados. Continuamos a conversa pelo WhatsApp.
+              </p>
+            )}
+
+            <button
+              type="submit"
+              className="btn-primary-glow w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold"
+            >
+              <Send className="h-4 w-4" /> Quero ser contatado
+            </button>
+            <p className="text-xs text-muted-foreground text-center">
+              Ao enviar, você concorda em ser contatado pelo time da Soluções Digitais.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* -------------------- CTA FINAL -------------------- */
+
 function FinalCTA() {
   return (
     <section className="py-24">
