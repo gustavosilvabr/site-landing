@@ -9,6 +9,17 @@ import mockupSite from "@/assets/mockup-site.jpg";
 import mockupMaps from "@/assets/mockup-maps.jpg";
 import mockupOrders from "@/assets/mockup-orders.jpg";
 import mockupSchedule from "@/assets/mockup-schedule.jpg";
+import solutionGoogleMaps from "@/assets/solution-google-maps.png";
+import solutionSites from "@/assets/solution-sites.png";
+import segmentAcademias from "@/assets/segment-academias.png";
+import segmentClinicas from "@/assets/segment-clinicas.png";
+import segmentCosmeticos from "@/assets/segment-cosmeticos.png";
+import segmentDentistas from "@/assets/segment-dentistas.png";
+import segmentEngenhariaCivil from "@/assets/segment-engenharia-civil.png";
+import segmentMarcenaria from "@/assets/segment-marcenaria.png";
+import segmentOculos from "@/assets/segment-oculos.png";
+import segmentPerfumes from "@/assets/segment-perfumes.png";
+import segmentRestaurantes from "@/assets/segment-restaurantes.png";
 
 const WHATSAPP_NUMBER = "5561995167585";
 const waLink = (msg: string) =>
@@ -50,7 +61,7 @@ const SERVICES = [
     title: "Sites de\nAlta Conversão",
     body: "Plataformas focadas em um único objetivo: transformar visitantes em oportunidades reais de negócio.",
     points: ["Mobile first e ultra-rápido", "Copy estratégico de conversão", "Integração nativa com WhatsApp"],
-    image: mockupSite,
+    image: solutionSites,
     flip: false,
     cta: "Quero meu site",
   },
@@ -60,7 +71,7 @@ const SERVICES = [
     title: "Domínio Local\nGoogle Maps",
     body: "Colocamos sua empresa na frente de quem está procurando agora pelo seu serviço, na sua região.",
     points: ["Otimização do Perfil de Empresa", "Estratégia de avaliações e fotos", "SEO local de intenção de compra"],
-    image: mockupMaps,
+    image: solutionGoogleMaps,
     flip: true,
     cta: "Quero aparecer",
   },
@@ -86,9 +97,84 @@ const SERVICES = [
   },
 ];
 
+const PROJECT_AREAS = [
+  {
+    area: "Clínicas",
+    title: "Captação de pacientes particulares",
+    body: "Landing page com especialidades, convênios, prova social, localização e botão direto para agendamento.",
+    image: segmentClinicas,
+    accent: "bg-blue-500",
+    points: ["Agenda online", "SEO local", "WhatsApp por especialidade"],
+  },
+  {
+    area: "Dentistas",
+    title: "Tratamentos com alto valor percebido",
+    body: "Páginas para implantes, estética dental e avaliação inicial com fotos, diferenciais e funil de contato.",
+    image: segmentDentistas,
+    accent: "bg-cyan-500",
+    points: ["Antes e depois", "Avaliação pelo WhatsApp", "Google Maps otimizado"],
+  },
+  {
+    area: "Restaurantes",
+    title: "Pedidos, reservas e cardápio digital",
+    body: "Site rápido com cardápio, promoções, delivery próprio, reservas e integração com campanhas locais.",
+    image: segmentRestaurantes,
+    accent: "bg-rose-500",
+    points: ["Cardápio online", "Pedidos sem comissão", "Campanhas por bairro"],
+  },
+  {
+    area: "Marcenaria",
+    title: "Orçamentos para móveis planejados",
+    body: "Portfólio visual, tipos de ambientes, formulário de briefing e captação de clientes de alto ticket.",
+    image: segmentMarcenaria,
+    accent: "bg-amber-600",
+    points: ["Galeria de projetos", "Briefing inteligente", "Leads qualificados"],
+  },
+  {
+    area: "Engenharia civil",
+    title: "Autoridade para obras e projetos",
+    body: "Landing institucional com serviços, obras entregues, ART, equipe técnica e solicitação de proposta.",
+    image: segmentEngenhariaCivil,
+    accent: "bg-slate-500",
+    points: ["Portfólio técnico", "Propostas online", "SEO regional"],
+  },
+  {
+    area: "Cosméticos",
+    title: "Vitrine de produtos e lançamentos",
+    body: "Páginas para linhas de produtos, kits, revendedores, catálogo e campanhas sazonais de conversão.",
+    image: segmentCosmeticos,
+    accent: "bg-fuchsia-500",
+    points: ["Catálogo visual", "Kits promocionais", "Captação de revendas"],
+  },
+  {
+    area: "Perfumes",
+    title: "Experiência premium de marca",
+    body: "Landing sensorial com coleções, notas olfativas, combos, datas comemorativas e compra pelo WhatsApp.",
+    image: segmentPerfumes,
+    accent: "bg-violet-500",
+    points: ["Coleções por ocasião", "Ofertas premium", "Atendimento consultivo"],
+  },
+  {
+    area: "Óculos",
+    title: "Venda local para óticas e eyewear",
+    body: "Site com armações, lentes, exames, marcas, localização e campanha para levar clientes até a loja.",
+    image: segmentOculos,
+    accent: "bg-sky-500",
+    points: ["Vitrine de armações", "Rotas no Maps", "Cupons locais"],
+  },
+  {
+    area: "Academias",
+    title: "Matrículas e planos recorrentes",
+    body: "Landing com modalidades, planos, horários, aulas experimentais e automação para novos alunos.",
+    image: segmentAcademias,
+    accent: "bg-sky-600",
+    points: ["Aula experimental", "Planos destacados", "Remarketing local"],
+  },
+];
+
 const METRICS = [
   { v: "+300%", label: "Alcance Local", bg: "bg-[var(--ink-deep)]", fg: "text-[var(--paper)]", muted: "text-[var(--steel)]" },
-  { v: "+150%", label: "Leads Qualificados", bg: "bg-[var(--ink-mid)]", fg: "text-[var(--paper)]", muted: "text-[var(--paper)]/60" },
+  { v: "+150%", label: "Leads Qualificados", bg: "bg-[var(--signal)]", fg: "text-[var(--ink-deep)]", muted: "text-[var(--ink-deep)]/70" },
   { v: "+200%", label: "Ligações Diretas", bg: "bg-[var(--ink-deep)]", fg: "text-[var(--paper)]", muted: "text-[var(--steel)]" },
   { v: "Zero", label: "Desperdício", bg: "bg-[var(--steel)]", fg: "text-[var(--ink-deep)]", muted: "text-[var(--ink-deep)]/70" },
 ];
@@ -107,42 +193,98 @@ function LandingPage() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>(".reveal-up").forEach((el) => {
-        gsap.to(el, {
+      if (prefersReducedMotion) {
+        gsap.set(".reveal, .reveal-up, [data-stagger-item]", {
           opacity: 1,
           y: 0,
-          duration: 0.9,
+          clearProps: "transform",
+        });
+        return;
+      }
+
+      const heroTl = gsap.timeline({ defaults: { ease: "expo.out" } });
+      heroTl
+        .fromTo(".hero-kicker", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7 })
+        .fromTo(".hero-title", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.9 }, "-=0.35")
+        .fromTo(".hero-copy", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.75 }, "-=0.45")
+        .fromTo(".hero-actions", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.65 }, "-=0.35")
+        .fromTo(".hero-stat", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, stagger: 0.08 }, "-=0.25")
+        .fromTo(
+          ".hero-media",
+          { opacity: 0, y: 36 },
+          { opacity: 1, y: 0, duration: 1 },
+          "-=0.8",
+        );
+
+      gsap.utils.toArray<HTMLElement>(".reveal-up").forEach((el) => {
+        if (el.closest("#top")) return;
+        gsap.fromTo(el, {
+          opacity: 0,
+          y: 30,
+        }, {
+          opacity: 1,
+          y: 0,
+          duration: 0.85,
           ease: "expo.out",
-          scrollTrigger: { trigger: el, start: "top 85%" },
+          scrollTrigger: { trigger: el, start: "top 84%", once: true },
         });
       });
       gsap.utils.toArray<HTMLElement>(".reveal").forEach((el) => {
-        gsap.to(el, {
+        if (el.closest("#top")) return;
+        gsap.fromTo(el, {
+          opacity: 0,
+        }, {
           opacity: 1,
           duration: 0.8,
           ease: "power2.out",
-          scrollTrigger: { trigger: el, start: "top 88%" },
+          scrollTrigger: { trigger: el, start: "top 88%", once: true },
         });
       });
       gsap.utils.toArray<HTMLElement>("[data-stagger]").forEach((wrap) => {
         const items = wrap.querySelectorAll<HTMLElement>("[data-stagger-item]");
         gsap.fromTo(
           items,
-          { opacity: 0, y: 28 },
+          { opacity: 0, y: 30, scale: 0.98 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.7,
+            scale: 1,
+            duration: 0.72,
             ease: "expo.out",
-            stagger: 0.08,
-            scrollTrigger: { trigger: wrap, start: "top 80%" },
+            stagger: 0.07,
+            scrollTrigger: { trigger: wrap, start: "top 82%", once: true },
+          },
+        );
+      });
+      gsap.utils.toArray<HTMLElement>(".image-reveal").forEach((wrap) => {
+        const image = wrap.querySelector("img");
+        if (!image) return;
+        gsap.fromTo(
+          wrap,
+          { clipPath: "inset(12% 0 12% 0)" },
+          {
+            clipPath: "inset(0% 0 0% 0)",
+            duration: 1,
+            ease: "expo.out",
+            scrollTrigger: { trigger: wrap, start: "top 82%", once: true },
+          },
+        );
+        gsap.fromTo(
+          image,
+          { scale: 1.08 },
+          {
+            scale: 1,
+            duration: 1.15,
+            ease: "expo.out",
+            scrollTrigger: { trigger: wrap, start: "top 82%", once: true },
           },
         );
       });
       gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((el) => {
         gsap.to(el, {
-          yPercent: -8,
+          yPercent: -6,
           ease: "none",
           scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
         });
@@ -157,6 +299,7 @@ function LandingPage() {
       <Hero />
       <Problem />
       <Services />
+      <ProjectAreas />
       <Metrics />
       <Process />
       <LeadSection />
@@ -170,7 +313,7 @@ function LandingPage() {
 
 function Nav() {
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[var(--ink)] border-b border-[var(--ink-mid)]">
+    <nav className="sticky top-0 z-50 w-full bg-[var(--ink)]/95 border-b border-white/10 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-20 lg:h-24 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
           <div className="w-10 h-10 bg-[var(--steel)] flex items-center justify-center">
@@ -181,8 +324,9 @@ function Nav() {
           </span>
         </a>
         <div className="hidden lg:flex items-center gap-10">
-          <div className="flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--paper)]/60">
+          <div className="flex gap-6 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--paper)]/60">
             <a href="#solucoes" className="hover:text-[var(--steel)] transition-colors">Soluções</a>
+            <a href="#projetos" className="hover:text-[var(--steel)] transition-colors">Projetos</a>
             <a href="#resultados" className="hover:text-[var(--steel)] transition-colors">Resultados</a>
             <a href="#processo" className="hover:text-[var(--steel)] transition-colors">Processo</a>
             <a href="#contato" className="hover:text-[var(--steel)] transition-colors">Contato</a>
@@ -213,29 +357,30 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative bg-[var(--ink)] pt-20 pb-32 lg:pt-32 lg:pb-48 overflow-hidden">
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[60vw] h-[60vw] border-[40px] lg:border-[60px] border-[var(--ink-mid)] translate-x-1/3 -translate-y-1/3" />
+    <section id="top" className="relative premium-surface pt-20 pb-32 lg:pt-32 lg:pb-44 overflow-x-hidden overflow-y-visible">
+      <div className="absolute inset-0 opacity-25 pointer-events-none">
+        <div className="absolute top-0 right-0 w-[60vw] h-[60vw] border-[40px] lg:border-[60px] border-[var(--steel)]/25 translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--steel)]/60 to-transparent" />
       </div>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-7">
-            <div className="reveal inline-flex items-center gap-3 mb-8">
+            <div className="hero-kicker inline-flex items-center gap-3 mb-8">
               <span className="w-8 h-[2px] bg-[var(--steel)]" />
               <span className="text-[var(--steel)] text-[11px] font-bold uppercase tracking-[0.3em]">
                 Performance Digital para Empresas Locais
               </span>
             </div>
-            <h1 className="reveal-up font-display text-5xl sm:text-6xl lg:text-8xl text-[var(--paper)] leading-[0.92] mb-10 uppercase">
+            <h1 className="hero-title reveal-up font-display text-5xl sm:text-6xl lg:text-8xl text-[var(--paper)] leading-[0.92] mb-10 uppercase">
               Sua Empresa Está
               <span className="block text-[var(--steel)]">Perdendo Clientes</span>
               Todos os Dias.
             </h1>
-            <p className="reveal-up text-lg lg:text-xl text-[var(--paper)]/70 mb-10 max-w-xl leading-relaxed">
+            <p className="hero-copy reveal-up text-lg lg:text-xl text-[var(--paper)]/72 mb-10 max-w-xl leading-relaxed">
               Convertemos tráfego local em faturamento real. Sites de alta conversão, Google Maps otimizado e sistemas
               que vendem 24/7 — sem fórmulas mágicas, com método.
             </p>
-            <div className="reveal-up flex flex-wrap gap-5">
+            <div className="hero-actions reveal-up flex flex-wrap gap-5">
               <a
                 href={waLink("Olá! Quero uma consultoria gratuita das Soluções Digitais.")}
                 target="_blank"
@@ -246,20 +391,20 @@ function Hero() {
               </a>
               <a
                 href="#solucoes"
-                className="px-8 lg:px-10 py-5 lg:py-6 border-2 border-[var(--ink-mid)] text-[var(--paper)] font-black uppercase tracking-widest text-xs lg:text-sm hover:bg-[var(--ink-mid)] transition-colors"
+                className="px-8 lg:px-10 py-5 lg:py-6 border-2 border-white/15 text-[var(--paper)] font-black uppercase tracking-widest text-xs lg:text-sm hover:bg-white/10 transition-colors"
               >
                 Nossas Soluções
               </a>
             </div>
-            <div className="reveal mt-12 grid grid-cols-3 gap-6 max-w-md">
+            <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
               <Stat top="+200" label="Empresas atendidas" />
               <Stat top="14d" label="Entrega média" />
               <Stat top="5min" label="Resposta no WhatsApp" />
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative reveal" data-parallax>
-            <div className="border-2 border-[var(--ink-mid)] p-3 bg-[var(--ink-deep)]">
+          <div className="hero-media lg:col-span-5 relative reveal" data-parallax>
+            <div className="image-reveal border border-white/10 p-3 bg-[var(--ink-deep)] shadow-2xl shadow-black/25">
               <img
                 src={heroDashboard}
                 alt="Painel de performance digital de uma empresa local com gráficos e Google Maps"
@@ -283,7 +428,7 @@ function Hero() {
 
 function Stat({ top, label }: { top: string; label: string }) {
   return (
-    <div>
+    <div className="hero-stat">
       <p className="font-display text-2xl text-[var(--paper)]">{top}</p>
       <p className="text-[10px] font-bold uppercase tracking-widest text-[var(--paper)]/50 mt-1">{label}</p>
     </div>
@@ -294,7 +439,7 @@ function Stat({ top, label }: { top: string; label: string }) {
 
 function Problem() {
   return (
-    <section className="py-24 lg:py-32 bg-[var(--paper)] border-y border-[var(--ink-mid)]/15">
+    <section className="py-24 lg:py-32 light-surface border-y border-[var(--ink-mid)]/15">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-5 reveal-up">
@@ -312,16 +457,16 @@ function Problem() {
               <div
                 key={p.n}
                 data-stagger-item
-                className="p-8 lg:p-10 bg-white flex items-start gap-6 hover:bg-[var(--paper)] transition-colors"
+                className="motion-card p-8 lg:p-10 bg-white flex items-start gap-5 lg:gap-6 hover:bg-[var(--paper)] transition-colors min-h-[170px]"
               >
                 <div className="w-12 h-12 flex-shrink-0 bg-[var(--ink)] flex items-center justify-center text-[var(--paper)] text-base font-black italic font-display">
                   {p.n}
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-display text-lg text-[var(--ink)] uppercase tracking-tight mb-2">
                     {p.title}
                   </h3>
-                  <p className="text-sm text-[var(--ink)]/60 leading-relaxed">{p.body}</p>
+                  <p className="text-sm text-[var(--ink)]/60 leading-relaxed break-words">{p.body}</p>
                 </div>
               </div>
             ))}
@@ -336,7 +481,7 @@ function Problem() {
 
 function Services() {
   return (
-    <section id="solucoes" className="bg-[var(--ink)]">
+    <section id="solucoes" className="premium-surface">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
         <div className="reveal-up max-w-3xl">
           <p className="eyebrow mb-6">Soluções</p>
@@ -391,15 +536,15 @@ function ServiceRow({ n, eyebrow, title, body, points, image, flip, cta, isLast 
   );
 
   const imageBlock = (
-    <div className="p-6 lg:p-20 flex items-center justify-center bg-[var(--ink-deep)]/40">
-      <div className="w-full border border-[var(--ink-mid)] bg-[var(--ink-deep)] overflow-hidden">
+    <div className="p-3 lg:p-8 xl:p-12 flex items-center justify-center bg-[var(--ink-deep)]/35">
+      <div className="image-reveal w-full border border-white/10 bg-[var(--ink-deep)] overflow-hidden shadow-2xl shadow-black/20">
         <img
           src={image}
           alt={`Mockup ${title.replace("\n", " ")}`}
           width={1280}
           height={960}
           loading="lazy"
-          className="w-full aspect-[4/3] object-cover"
+          className="block w-full h-auto"
         />
       </div>
     </div>
@@ -425,6 +570,98 @@ function ServiceRow({ n, eyebrow, title, body, points, image, flip, cta, isLast 
   );
 }
 
+/* -------------------- PROJECT AREAS -------------------- */
+
+function ProjectAreas() {
+  return (
+    <section id="projetos" className="py-24 lg:py-32 light-surface border-b border-[var(--ink-mid)]/15">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="reveal-up grid lg:grid-cols-12 gap-10 lg:gap-16 items-end mb-16">
+          <div className="lg:col-span-7">
+            <p className="eyebrow mb-6">Projetos por segmento</p>
+            <h2 className="font-display text-4xl lg:text-6xl text-[var(--ink)] uppercase leading-[0.95]">
+              Landing pages para quem precisa vender no mundo real.
+            </h2>
+          </div>
+          <p className="lg:col-span-5 text-[var(--ink)]/65 leading-relaxed max-w-xl">
+            Cada área recebe uma página com argumento, imagem, prova social e caminho de conversão próprio. O design
+            muda, mas o objetivo é o mesmo: transformar visita em conversa comercial.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5" data-stagger>
+          {PROJECT_AREAS.map((project) => (
+            <ProjectAreaCard key={project.area} {...project} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+type ProjectAreaCardProps = (typeof PROJECT_AREAS)[number];
+
+function ProjectAreaCard({ area, title, body, image, accent, points }: ProjectAreaCardProps) {
+  return (
+    <article
+      data-stagger-item
+      className="motion-card group bg-white border border-[var(--ink-mid)]/15 overflow-hidden hover:border-[var(--steel)]/60 transition-colors"
+    >
+      <div className="relative bg-[var(--ink)] p-3">
+        <div className="bg-[var(--paper)] border border-white/10 overflow-hidden">
+          <div className="h-8 bg-[var(--ink-deep)] flex items-center gap-2 px-3">
+            <span className="w-2.5 h-2.5 bg-red-400" />
+            <span className="w-2.5 h-2.5 bg-yellow-400" />
+            <span className="w-2.5 h-2.5 bg-sky-400" />
+            <span className="ml-auto text-[8px] font-black uppercase tracking-[0.18em] text-[var(--paper)]/45">
+              Preview
+            </span>
+          </div>
+          <div className="image-reveal relative">
+            <img
+              src={image}
+              alt={`Preview de landing page para ${area}`}
+              width={1280}
+              height={960}
+              loading="lazy"
+              className="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink-deep)]/80 via-transparent to-transparent" />
+            <div className="absolute left-4 right-4 bottom-4">
+              <span className={`inline-block h-1.5 w-10 ${accent} mb-3`} />
+              <p className="font-display text-2xl text-white uppercase leading-none">{area}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="p-7">
+        <h3 className="font-display text-xl text-[var(--ink)] uppercase leading-tight mb-3">{title}</h3>
+        <p className="text-sm text-[var(--ink)]/65 leading-relaxed mb-6">{body}</p>
+        <ul className="space-y-2 mb-7">
+          {points.map((point) => (
+            <li
+              key={point}
+              className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-[var(--ink)]/70"
+            >
+              <span className={`w-2 h-2 ${accent}`} />
+              {point}
+            </li>
+          ))}
+        </ul>
+        <a
+          href={waLink(`Olá! Quero uma landing page para ${area}.`)}
+          target="_blank"
+          rel="noopener"
+          className="inline-flex items-center gap-3 text-[var(--ink)] text-xs font-black uppercase tracking-widest hover:text-[var(--steel)] transition-colors"
+        >
+          Ver solução para {area}
+          <ArrowRight className="h-4 w-4" />
+        </a>
+      </div>
+    </article>
+  );
+}
+
 /* -------------------- METRICS -------------------- */
 
 function Metrics() {
@@ -439,7 +676,7 @@ function Metrics() {
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--paper-mute)]" data-stagger>
           {METRICS.map((m) => (
-            <div key={m.label} data-stagger-item className={`${m.bg} p-10 lg:p-12`}>
+            <div key={m.label} data-stagger-item className={`motion-card ${m.bg} p-10 lg:p-12`}>
               <p className={`font-display text-4xl lg:text-5xl mb-3 ${m.fg}`}>{m.v}</p>
               <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${m.muted}`}>{m.label}</p>
             </div>
@@ -458,7 +695,7 @@ function Metrics() {
 
 function Process() {
   return (
-    <section id="processo" className="py-24 lg:py-32 bg-[var(--ink)] border-y border-[var(--ink-mid)]">
+    <section id="processo" className="py-24 lg:py-32 premium-surface border-y border-white/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="reveal-up max-w-2xl mb-16">
           <p className="eyebrow mb-6">Processo</p>
@@ -468,7 +705,7 @@ function Process() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--ink-mid)]" data-stagger>
           {PROCESS.map((p) => (
-            <div key={p.n} data-stagger-item className="bg-[var(--ink)] p-10">
+            <div key={p.n} data-stagger-item className="motion-card bg-[var(--ink)]/80 border border-white/10 p-10">
               <p className="font-display text-5xl text-[var(--steel)]/30 mb-8">{p.n}</p>
               <h3 className="font-display text-xl text-[var(--paper)] uppercase tracking-tight mb-3">
                 {p.title}
@@ -486,10 +723,10 @@ function Process() {
 
 function LeadSection() {
   return (
-    <section id="contato" className="py-24 lg:py-32 bg-[var(--paper)]">
+    <section id="contato" className="py-24 lg:py-32 light-surface">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 reveal-up">
-          <div className="lg:col-span-5 bg-[var(--ink)] p-10 lg:p-16 flex flex-col justify-between">
+        <div className="grid lg:grid-cols-12 reveal-up shadow-2xl shadow-[var(--ink-deep)]/10">
+          <div className="lg:col-span-5 premium-surface p-10 lg:p-16 flex flex-col justify-between">
             <div>
               <p className="text-[var(--steel)] text-[11px] font-bold uppercase tracking-[0.3em] mb-6">
                 Receba uma proposta
@@ -672,7 +909,7 @@ function Field({
 
 function FinalCTA() {
   return (
-    <section className="py-24 lg:py-32 bg-[var(--ink-deep)]">
+    <section className="py-24 lg:py-32 premium-surface">
       <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
         <p className="eyebrow mb-6 reveal-up">Próximo passo</p>
         <h2 className="font-display text-4xl lg:text-6xl text-[var(--paper)] uppercase leading-[0.95] mb-8 reveal-up">
