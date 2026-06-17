@@ -542,7 +542,7 @@ function LeadForm() {
     setError(null);
     setLoading(true);
     try {
-      await submitLead({
+      await submitLead.call({
         name: n,
         business: b,
         whatsapp: formatPhone(digits),
