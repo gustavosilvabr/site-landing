@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Agência de performance digital para PMEs: sites de alta conversão, otimização Google Maps, sistemas de pedidos e agendamento. Mais clientes, todos os dias.",
       },
       { name: "author", content: "Soluções Digitais" },
-      { property: "og:title", content: "Soluções Digitais — Performance Digital para Empresas Locais" },
+      { property: "og:title", content: "Soluções Digitais — Sites, Google Maps e Sistemas para Empresas Locais" },
       {
         property: "og:description",
         content:
@@ -92,12 +92,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Soluções Digitais — Performance Digital para Empresas Locais" },
+      { name: "twitter:title", content: "Soluções Digitais — Sites, Google Maps e Sistemas para Empresas Locais" },
       {
         name: "twitter:description",
         content:
           "Sites, Google Maps e sistemas inteligentes para fazer sua empresa local vender mais todos os dias.",
       },
+      { name: "description", content: "Creates high-converting premium landing pages for businesses to generate leads via WhatsApp." },
+      { property: "og:description", content: "Creates high-converting premium landing pages for businesses to generate leads via WhatsApp." },
+      { name: "twitter:description", content: "Creates high-converting premium landing pages for businesses to generate leads via WhatsApp." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/KqSEFXBbGBZw3H4wo3q3FBaPON12/social-images/social-1781702294016-ChatGPT_Image_17_de_jun._de_2026,_09_08_29.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/KqSEFXBbGBZw3H4wo3q3FBaPON12/social-images/social-1781702294016-ChatGPT_Image_17_de_jun._de_2026,_09_08_29.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
