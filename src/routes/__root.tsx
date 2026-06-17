@@ -77,19 +77,35 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Soluções Digitais — Sites, Google Maps e Sistemas para Empresas Locais" },
+      {
+        name: "description",
+        content:
+          "Agência de performance digital para PMEs: sites de alta conversão, otimização Google Maps, sistemas de pedidos e agendamento. Mais clientes, todos os dias.",
+      },
+      { name: "author", content: "Soluções Digitais" },
+      { property: "og:title", content: "Soluções Digitais — Performance Digital para Empresas Locais" },
+      {
+        property: "og:description",
+        content:
+          "Transformamos empresas locais em negócios digitais de sucesso. Sites, Google Maps e sistemas inteligentes que geram clientes.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Soluções Digitais — Performance Digital para Empresas Locais" },
+      {
+        name: "twitter:description",
+        content:
+          "Sites, Google Maps e sistemas inteligentes para fazer sua empresa local vender mais todos os dias.",
+      },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700;800;900&family=Epilogue:wght@300;400;500;600&display=swap",
       },
     ],
   }),
