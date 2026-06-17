@@ -657,9 +657,18 @@ function LeadForm() {
 
             <button
               type="submit"
-              className="btn-primary-glow w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold"
+              disabled={loading}
+              className="btn-primary-glow w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <Send className="h-4 w-4" /> Quero ser contatado
+              {loading ? (
+                <>
+                  <span className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white animate-spin" /> Enviando...
+                </>
+              ) : (
+                <>
+                  <Send className="h-4 w-4" /> Quero ser contatado
+                </>
+              )}
             </button>
             <p className="text-xs text-muted-foreground text-center">
               Ao enviar, você concorda em ser contatado pelo time da Soluções Digitais.
