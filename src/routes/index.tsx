@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState, type FormEvent } from "react";
 import {
   MessageCircle,
   Globe,
@@ -21,8 +22,10 @@ import {
   Rocket,
   ChartBar,
   Headphones,
+  Send,
 } from "lucide-react";
 import heroImage from "@/assets/hero-devices.jpg";
+
 
 const WHATSAPP_NUMBER = "5561995167585";
 const WHATSAPP_DISPLAY = "(61) 99516-7585";
