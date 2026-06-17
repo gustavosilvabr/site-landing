@@ -73,7 +73,9 @@ function LandingPage() {
       <Sites />
       <SocialProof />
       <HowItWorks />
+      <LeadForm />
       <FinalCTA />
+
       <Footer />
       <FloatingWhatsApp />
     </div>
